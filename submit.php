@@ -46,11 +46,11 @@ if(isset($_FILES['pictures'])) {
 					$tmp_name = $_FILES["pictures"]["tmp_name"][$key];
 					$name = $_FILES["pictures"]["name"][$key];
 		
-					//upload file to local server directory "data", prepend with "mdphp-"
-					move_uploaded_file($tmp_name, "data/mdphp-$name");
+					//upload file to local server directory "data", prepend with "simple-"
+					move_uploaded_file($tmp_name, "data/simple-$name");
 					
 					//set uploaded file as post variable for Metadisk
-					$file_name_with_full_path = "data/mdphp-$name";       
+					$file_name_with_full_path = "data/simple-$name";       
 					$post = array('file'=>'@'.$file_name_with_full_path);
 			
 					//upload file from local server to Metadisk
@@ -64,7 +64,7 @@ if(isset($_FILES['pictures'])) {
 					curl_close ($ch);
 
 					//delete file from local server	
-					unlink(realpath("data/mdphp-$name"));
+					unlink(realpath("data/simple-$name"));
     
 		    		//get filehash and key from Metadisk
 		    		$resultarray = json_decode($result, true);
