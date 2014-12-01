@@ -78,11 +78,7 @@ if ($_POST["password"] == "123test"){
             
             			echo "<hr>";
             
-				} else {
-    		
-    				echo "upload error";
-    		
-    				}
+				} 
     	
 			}
 			
