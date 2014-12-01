@@ -5,9 +5,9 @@ Simple Storj Uploader is a simple interface that utilizes the Storj web-core API
 Built with PHP and jQuery.
 
 Parameters:
-- Acceptable file types
-- Max file size
-- Password
+- Acceptable file types (PHP)
+- Max file size (PHP and jQuery)
+- Password (PHP)
 
 
 Demo: http://joelooney.org/storj-uploader/
