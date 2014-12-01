@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>
+		Metadisk Uploader (PHP/jQuery)
+	</title>
+	<script type="text/javascript" language="Javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+</head>
+<script>
+function addfile()
+{
+	$("<p>Select file to upload: <input type='file' name='pictures[]' /></p>").appendTo( "#filelist" );
+	$( "input" ).bind('change', function() {
+        	if (this.files[0].size/1024/1024 > 1) {
+        	
+            alert('This file size is too large ('+(this.files[0].size/1024/1024).toFixed(2)+' mb). File must be less than 1 mb.');
+            
+            $(this).val('');
+            
+            
+        	}
+    }); 
+}
+
+</script>
+<body>
+<h1>Metadisk Uploader (PHP/jQuery)</h1>
+<p style="font-weight: bold;">Current Parameters:</p>
+<ul style="padding-bottom: 50px;">
+	<li>Only PDF, JPG, GIF and PNG types are accepted <i>(PHP validation)</i></li> 
+	<li>File must be less than 1 megabytes <i>(PHP/jQuery validation)</i></li>
+	<li>Password is 123test <i>(PHP validation)</i></li>
+</ul>
+<form action="submit.php" method="post" enctype="multipart/form-data">
+<div id="filelist">
+<script type="text/javascript">
+	addfile();
+</script>
+</div>
+<p><input type="button" value="Add an additional file..." onclick="addfile();"/></p>
+<p style="padding-top: 50px;">Password: <input type="password" name="password" /></p>
+<p><input type="submit" value="Send" /></p>
+
+</p>
+</form>
+</body>
+</html>
