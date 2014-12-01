@@ -11,3 +11,5 @@ Parameters:
 
 
 Demo: http://joelooney.org/storj-uploader/
+
+Tip BTC/SJCX: 1GcFhAQGFZVDAr4jiR2tKwisHcgNUjhGNC
